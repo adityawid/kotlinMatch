@@ -30,7 +30,7 @@ class DetailMatchActivity : AppCompatActivity() {
         getBedgeTeam(matchDetail?.idHomeTeam.toString() , "HOME")
         getBedgeTeam(matchDetail?.idAwayTeam.toString() , "AWAY")
 
-        if (pastNext == "PAST"){
+        if (pastNext == "PAST_MATCH"){
             getPastMatch()
         }
 

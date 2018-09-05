@@ -3,20 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.NextMatchFragment">
+    tools:context=".match.NextMatchFragment">
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/rv_next">
     </android.support.v7.widget.RecyclerView>
-<!--
     <ProgressBar
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:id="@+id/pb_next"/>
--->
 
 </RelativeLayout>
