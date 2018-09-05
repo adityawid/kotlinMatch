@@ -6,8 +6,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.devjurnal.footballmatch.DetailPastMatchActivity
-import com.devjurnal.footballmatch.DetailNextMatchActivity
+import com.devjurnal.footballmatch.DetailMatchActivity
 import com.devjurnal.footballmatch.R
 import com.devjurnal.footballmatch.models.EventsItem
 import kotlinx.android.synthetic.main.item_score.view.*
@@ -53,14 +52,17 @@ class ScoreAdapter(json: List<EventsItem?>?): RecyclerView.Adapter<ScoreAdapter.
                 bundle.putParcelable("event",event)
 
                 if (json?.get(position)?.intHomeScore != null){
-                    val i: Intent = Intent(itemView.context, DetailPastMatchActivity::class.java)
+                    val i: Intent = Intent(itemView.context, DetailMatchActivity::class.java)
                     i.putExtra("bundle", bundle)
+                    i.putExtra("pastnext", "PAST")
                     itemView.context.startActivity(i)
 
                 }else{
-                    val i: Intent = Intent(itemView.context, DetailNextMatchActivity::class.java)
+                    val i: Intent = Intent(itemView.context, DetailMatchActivity::class.java)
                     i.putExtra("homeTeam", json?.get(position)?.idHomeTeam)
                     i.putExtra("awayTeam", json?.get(position)?.idAwayTeam)
+                    i.putExtra("bundle", bundle)
+                    i.putExtra("pastnext", "NEXT")
                     itemView.context.startActivity(i)
                 }
 

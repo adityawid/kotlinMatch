@@ -26,7 +26,7 @@ import kotlinx.android.synthetic.main.fragment_prev_match.view.*
  */
 class PrevMatchFragment : Fragment() {
 
-    lateinit var rootView : View
+    lateinit var rootView: View
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -44,14 +44,12 @@ class PrevMatchFragment : Fragment() {
 
         nextMatch.subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
-                    t: RestEvents? ->
+                .subscribe({ t: RestEvents? ->
                     Log.d("PAST", t.toString())
 
                     rootView.rv_prev.adapter = ScoreAdapter(t?.events)
-                }) {
-                    error ->
-                    Log.e("error PAST" , error.localizedMessage)
+                }) { error ->
+                    Log.e("error PAST", error.localizedMessage)
                 }
     }
 

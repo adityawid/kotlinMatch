@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailPastMatchActivity">
+    android:padding="8dp"
+    tools:context=".DetailMatchActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -65,12 +66,12 @@
                 android:layout_marginTop="5dp" />
 
             <TextView
-                android:id="@+id/txt_score"
+                android:id="@+id/DPMA_txt_score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:textAlignment="center"
-                tools:text="0 : 0" />
+                tools:text="0 vs 0" />
 
             <TextView
                 android:id="@+id/DPMA_txt_form_home"
@@ -144,44 +145,6 @@
                     tools:text="Striker 1" />
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/line2_statistic"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/line1_statistic"
-                android:layout_marginTop="4dp">
-
-                <TextView
-                    android:id="@+id/DPMA_txt_shots_away"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:textAlignment="textEnd"
-                    android:textSize="14sp"
-                    tools:ignore="SmallSp"
-                    tools:text="shots on Goal" />
-
-                <TextView
-                    android:id="@+id/txtShots"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:text="@string/shots"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="14sp"
-                    tools:ignore="SmallSp" />
-
-                <TextView
-                    android:id="@+id/DPMA_txt_shots_home"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:textAlignment="viewStart"
-                    android:textSize="14sp"
-                    tools:ignore="SmallSp"
-                    tools:text="shots on Goal" />
-            </RelativeLayout>
 
         </RelativeLayout>
 
@@ -346,7 +309,7 @@
                     tools:ignore="SmallSp" />
 
                 <TextView
-                    android:id="@+id/txt_def_away"
+                    android:id="@+id/DPMA_txt_def_away"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -356,7 +319,7 @@
                     tools:text="2" />
 
                 <TextView
-                    android:id="@+id/txt_def_home"
+                    android:id="@+id/DPMA_txt_def_home"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -374,7 +337,7 @@
                 android:layout_marginTop="4dp">
 
                 <TextView
-                    android:id="@+id/txt_mid_home"
+                    android:id="@+id/DPMA_txt_mid_home"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -384,7 +347,7 @@
                     tools:text="1" />
 
                 <TextView
-                    android:id="@+id/txt_mid_away"
+                    android:id="@+id/DPMA_txt_mid_away"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -413,7 +376,7 @@
                 android:layout_marginTop="4dp">
 
                 <TextView
-                    android:id="@+id/txtFor"
+                    android:id="@+id/txtForward"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -424,7 +387,7 @@
                     tools:ignore="SmallSp" />
 
                 <TextView
-                    android:id="@+id/txt_for_home"
+                    android:id="@+id/DPMA_txt_fwd_home"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -434,7 +397,7 @@
                     tools:text="1" />
 
                 <TextView
-                    android:id="@+id/txt_for_away"
+                    android:id="@+id/DPMA_txt_fwd_away"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -458,7 +421,7 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/txt_sub_home"
+                android:id="@+id/DPMA_txt_sub_home"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="viewStart"
@@ -467,7 +430,7 @@
                 tools:text="0" />
 
             <TextView
-                android:id="@+id/txt_sub_away"
+                android:id="@+id/DPMA_txt_sub_away"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"

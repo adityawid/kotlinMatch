@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        setFragment(NextMatchFragment())
+        setFragment(PrevMatchFragment())
         setJudul("Prev Match")
     }
 
