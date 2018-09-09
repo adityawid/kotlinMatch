@@ -4,8 +4,9 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import com.devjurnal.footballmatch.match.NextMatchFragment
-import com.devjurnal.footballmatch.match.PrevMatchFragment
+import com.devjurnal.footballmatch.screen.favorite.FavoriteFragment
+import com.devjurnal.footballmatch.screen.match.NextMatchFragment
+import com.devjurnal.footballmatch.screen.match.PrevMatchFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.noButton
@@ -23,6 +24,11 @@ class MainActivity : AppCompatActivity() {
             R.id.navigation_next -> {
                 setJudul("Next Match")
                 setFragment(NextMatchFragment())
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_favorite -> {
+                setJudul("Favorit ")
+                setFragment(FavoriteFragment())
                 return@OnNavigationItemSelectedListener true
             }
         }

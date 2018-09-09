@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.devjurnal.footballmatch.R
-import com.devjurnal.footballmatch.models.EventsItem
+import com.devjurnal.footballmatch.localDB.FavoriteContract
 import kotlinx.android.synthetic.main.item_score.view.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 
-class ScoreAdapter(json: List<EventsItem?>?, private val listener: (EventsItem) -> Unit) : RecyclerView.Adapter<ScoreAdapter.MyHolder>() {
-    var json: List<EventsItem?>?
+class FavoriteMatchAdapter(json: ArrayList<FavoriteContract>, private val listener: (FavoriteContract) -> Unit) : RecyclerView.Adapter<FavoriteMatchAdapter.MyHolder>() {
+    var json: List<FavoriteContract?>?
     lateinit var itemView: View
 
     // inisialisasi List
@@ -32,20 +32,23 @@ class ScoreAdapter(json: List<EventsItem?>?, private val listener: (EventsItem) 
         holder.bind(position, json, listener)
     }
 
-    fun refresh(fill: List<EventsItem?>?) {
+    fun refresh(fill: List<FavoriteContract?>?) {
         json = fill
         notifyDataSetChanged()
     }
 
     class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         @SuppressLint("SetTextI18n")
-        fun bind(position: Int, json: List<EventsItem?>?, listener: (EventsItem) -> Unit) {
-            itemView.date_match.text = json?.get(position)?.dateEvent.toString()
-            itemView.home_team.text = json?.get(position)?.strHomeTeam.toString()
-            itemView.away_team.text = json?.get(position)?.strAwayTeam
-            if (json?.get(position)?.intHomeScore != null) {
-                itemView.score_team.text = json[position]?.intHomeScore.toString() +
-                        " VS " + json[position]?.intAwayScore.toString()
+        fun bind(position: Int, json: List<FavoriteContract?>?, listener: (FavoriteContract) -> Unit) {
+            itemView.date_match.text = json?.get(position)?.dateEvent
+            itemView.home_team.text = json?.get(position)?.homeTeam
+            itemView.away_team.text = json?.get(position)?.awayTeam
+
+            if (json?.get(position)?.homeScore.equals("null")) {
+                itemView.score_team.text = " VS "
+            } else {
+                itemView.score_team.text = json?.get(position)?.homeScore.toString() +
+                        " VS " + json?.get(position)?.awayScore.toString()
             }
 
             itemView.onClick {

@@ -1,4 +1,4 @@
-package com.devjurnal.footballmatch.match
+package com.devjurnal.footballmatch.screen.match
 
 import com.devjurnal.footballmatch.models.EventsItem
 

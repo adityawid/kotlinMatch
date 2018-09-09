@@ -1,4 +1,4 @@
-package com.devjurnal.footballmatch.match
+package com.devjurnal.footballmatch.screen.match
 
 import android.util.Log
 import com.devjurnal.footballmatch.models.RestEvents
@@ -25,7 +25,6 @@ class MatchPresenter(private val view: MatchView) {
                             Log.d("NEXT", t.toString())
                             view.hideLoading()
 
-//                            rootView.rv_prev.adapter = ScoreAdapter(t?.events)
                             view.showTeamList(t?.events)
                         }) {
                             error ->
@@ -46,7 +45,6 @@ class MatchPresenter(private val view: MatchView) {
                             Log.d("PAST", t.toString())
                             view.hideLoading()
 
-//                            rootView.rv_prev.adapter = ScoreAdapter(t?.events)
                             view.showTeamList(t?.events)
                         }) { error ->
                             view.hideLoading()

@@ -19,4 +19,7 @@ interface EventInterface {
 
     @GET("json/1/lookupteam.php")
     fun getImage(@Query("id") id : String ): Observable<RestTeam>
+
+    @GET("json/1/lookupevent.php")
+    fun getEvent(@Query("id") idEvent : String ): Observable<RestEvents>
 }
